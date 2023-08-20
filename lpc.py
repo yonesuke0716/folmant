@@ -50,9 +50,10 @@ fig = plt.figure(figsize=(10, 8))
 ax1 = fig.add_subplot(121)
 ax2 = fig.add_subplot(122)
 
+print(result_df.head())
 for i in range(n_clusters):
     ax1.scatter(result_df["1"][labels == i], result_df["2"][labels == i], label=i, color=colors[i], alpha=0.3)
-    ax2.scatter(range(len(result_df)), result_df["kmeans_result"])
+ax2.scatter(result_df["index"], result_df["kmeans_result"])
 
 ax1.set_title("k-means", size=14)
 ax1.legend()
